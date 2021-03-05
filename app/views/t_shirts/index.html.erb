@@ -1,2 +1,25 @@
-<h1>TShirts#index</h1>
-<p>Find me in app/views/t_shirts/index.html.erb</p>
+<div class="main t_shirts-index">
+  <div class="sinnki">
+      <%=link_to("/t_shirts/new") do %>
+    <button class="btn">追加</button>
+  <%end%>
+  </div>
+  <div class="contain">
+    <% @t_shirts.each do |t_shirt| %>
+      <div class="t_shirts-index-item">
+      <div class="t_shirt-top">
+        <img src="<%= "/t_shirt_images/#{t_shirt.image}" %>">
+      </div>
+      <div class="t_shirt-down1">ブランド：
+      <%= link_to(t_shirt.content ,"/t_shirts/#{t_shirt.id}") %>
+      </div>
+      <div class="t_shirt-down2">色：
+      <%= link_to(t_shirt.color ,"/t_shirts/#{t_shirt.id}") %>
+      </div>
+      <div class="t_shirt-down3">サイズ：
+      <%= link_to(t_shirt.size ,"/t_shirts/#{t_shirt.id}") %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
