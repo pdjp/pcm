@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 't_shirts/index'
-  get 'sweatshirts/index'
-  get 'shoes/index'
-  get 'pants/index'
-  get 'jackets/index'
   get "login" => "users#login_form"
   post "login" => "users#login"
   post "logout" => "users#logout"
